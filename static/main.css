@@ -1,0 +1,268 @@
+*{
+    border: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('/static/images/banner.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.main-header{
+    margin-top: 12px;
+    margin-left: 12px;
+    background-image: url(/Asset/header-bg.png);
+    width: 198vh;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    background-attachment: fixed;
+}
+header{
+    position: static;
+    background-color: #fff;
+    border-radius: 34px;
+}
+
+.logo{
+    font-size: 2rem;
+    color: #ffff;
+    position: relative;
+    left: 22px;
+    top:10px
+}
+span{
+    font-family: Impact, Charcoal, sans-serif;
+}
+ul{
+    display: flex;
+    gap: 2.95rem;
+    position: relative;
+    top:14px;
+    font-size: 1.4rem;
+    list-style: none;
+}
+ul a{
+    text-decoration: none;
+    color: #ffff;
+}
+ul a:hover{
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+}
+
+.sub-header{
+    margin-top: 12px;
+    position: relative;
+    left: 35%;
+    top:74px
+}
+.welcome{
+    font-size: 2rem;
+    color: #ffff;
+    position: relative;
+    top:44px;
+    left: 32px;
+}
+.intro-text{
+    font-size: 1.3rem;
+    position: relative;
+    top:64px;
+    right: 184px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #ffff;
+}
+.start{
+    font-size: 1.7em;
+    position: relative;
+    top:94px;
+    left: 12%;
+}
+
+
+p a{
+    color: #ffff;
+    text-decoration: none;
+    text-decoration: none;
+    color: aliceblue;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 19px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+    position: relative;
+    right: 40px;
+}
+p a:hover{
+    border: solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+#about{
+    position: relative;
+    text-align: center;
+    margin-top: 12px;
+    top:39px;
+
+}
+.abouts{
+    font-family: "Arial Black", Gadget, sans-serif;
+    padding: 29px;
+    position: relative;
+    top:26px;
+
+}
+
+#contact{
+text-align: center;
+}
+
+.dots{
+    position: absolute;
+    top:94px
+}
+.contact-form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    left: 390px;
+}
+
+.contact-form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    padding: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    position: relative;
+    right: 16px;
+    top:7px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#message{
+    height: 250px;
+    width: 100%;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+
+@media screen and (max-width: 960px) {
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      z-index: 1;
+      width: 100%;
+      max-width: 1300px;
+      padding: 0;
+    }
+
+    .navbar__menu {
+      display: grid;
+      grid-template-columns: auto;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      top: -1000px;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: -1;
+    }
+
+    .navbar__menu.active {
+      background: #ece9e9;
+      top: 100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 99;
+      height: 60vh;
+      font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+      padding-left: 25px;
+    }
+
+    .navbar__toggle .bar {
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background: #fff;
+      position: relative;
+      bottom: 98px;
+    }
+
+
+    #mobile-menu {
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      transform: translate(5%, 20%);
+    }
+
+    .navbar__toggle .bar {
+      display: block;
+      cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+        <!-- Include Font Awesome library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!--Including the stylesheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <!--Header-->
+    <nav class="main-header" id="header">
+        <h1 class="logo">Speak <span>Global</span></h1>
+    </nav>
+
+    <div class="container">
+       <!--Buttons for the text and files translation-->
+        <button class="trans trans-high" id="text-translate">  <i class="fa-solid fa-globe"></i>Translate text</button>
+        <button class="trans" id="file-translate"><i class="fa-regular fa-file"></i>Translate files</button>
+
+        <!--Text translate container-->
+        <div id="text-trans" class="file active">
+           <hr>
+           <div class="texting-area">
+            <!--Text Area for typing text and translating text-->
+             <div class="text-input">
+                <textarea spellcheck="false" class="enter-text" placeholder="Enter text"> {{ transcription }} </textarea>
+
+                <textarea spellcheck="false"  readonly disabled class="translate-text" placeholder="Translation"></textarea>
+              </div>
+              <!--These are the icons for text to speech ,copy and the exchange icon-->
+              <ul class="controls">
+
+                <li class="row from">
+                  <div class="icons">
+                    <i id="from" class="fas fa-volume-up volume"></i>
+                    <i id ="from" class="fa-regular fa-clipboard copy-me" ></i>
+                    <i class="fa-solid fa-microphone" id="recordButton"></i>
+                  </div>
+                  <select id="Text-select">
+                    <option value="en">English</option>
+                    <option value="sq">Albanian</option>
+                    <option value="ar">Arabic</option>
+                    <option value="az">Azerbaijani</option>
+                    <option value="bn">Bengali</option>
+                    <option value="bg">Bulgarian</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh">Chinese</option>
+                    <option value="zt">Chinese(traditional)</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="eo">Esperanto</option>
+                    <option value="et">Estonian</option>
+                    <option value="fi">Finnish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="el">Greek</option>
+                    <option value="he">Hebrew</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="id">Indonesian</option>
+                    <option value="ga">Irish</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="lv">Latvian</option>
+                    <option value="lt">Lithuanian</option>
+                    <option value="ms">Malay</option>
+                    <option value="no">Norwegian</option>
+                    <option value="fa">Persian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="sl">Slovenian</option>
+                    <option value="es">Spanish</option>
+                    <option value="sv">Swedish</option>
+                    <option value="tl">Tagalog (Filipino)</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="uk">Ukrainian</option>
+                    <option value="ur">Urdu</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="auto" selected>Detect language</option>
+                    </select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                  <select id="translate-select">
+                    <option value="en">English</option>
+                    <option value="sq">Albanian</option>
+                    <option value="ar">Arabic</option>
+                    <option value="az">Azerbaijani</option>
+                    <option value="bn">Bengali</option>
+                    <option value="bg">Bulgarian</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh">Chinese</option>
+                    <option value="zt">Chinese(traditional)</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="eo">Esperanto</option>
+                    <option value="et">Estonian</option>
+                    <option value="fi">Finnish</option>
+                    <option value="fr" selected>French</option>
+                    <option value="de">German</option>
+                    <option value="el">Greek</option>
+                    <option value="he">Hebrew</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="id">Indonesian</option>
+                    <option value="ga">Irish</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="lv">Latvian</option>
+                    <option value="lt">Lithuanian</option>
+                    <option value="ms">Malay</option>
+                    <option value="no">Norwegian</option>
+                    <option value="fa">Persian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="sl">Slovenian</option>
+                    <option value="es">Spanish</option>
+                    <option value="sv">Swedish</option>
+                    <option value="tl">Tagalog (Filipino)</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="uk">Ukrainian</option>
+                    <option value="ur">Urdu</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="au">Auto</option>
+                    </select>
+                  <div class="icons">
+                    <i id="to" class="fas fa-volume-up volume2"></i>
+                    <i id ="to" class="fa-regular fa-clipboard copy-me2"></i>
+                  </div>
+                </li>
+              </ul>
+           </div>
+            <div>
+
+            </div>
+           <!--The button to translate the text-->
+           <div class="audioC">
+             <h3>Audio to text</h3>
+              <form action="/transcribe" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file">
+                   <input type="submit" value="Upload" id="transcribeButton">
+
+              </form>
+
+        </div>
+           <button class="transbtn">Translate Text</button>
+          </div>
+          <!--For the file translate-->
+          <div id="file-trans" class="file">
+            <hr>
+            <div class="File-area">
+              <!--Text Area for typing text and translating text-->
+
+                  <div class=" file-area">
+                    <p class="file-support">Supported file formats: txt </p>
+                    <div class="choose_file">
+                        <label for="file" class="choose">Choose a file:</label>
+                        <input type="file" id="file" name="file" class="file-input" accept=".txt">
+                        <br><br>
+                        <button class="Translate-file">Translate</button>
+                        <a id="downloadLink" style="display:none;"></a>
+                   </div>
+           </div>
+
+                <!--These are the icons for text to speech ,copy and the exchange icon-->
+                <ul class="controls file-list">
+
+                  <li class="row from">
+                    <select id="File-select">
+                      <option value="en" selected>English</option>
+                      <option value="sq">Albanian</option>
+                      <option value="ar">Arabic</option>
+                      <option value="az">Azerbaijani</option>
+                      <option value="bn">Bengali</option>
+                      <option value="bg">Bulgarian</option>
+                      <option value="ca">Catalan</option>
+                      <option value="zh">Chinese</option>
+                      <option value="zt">Chinese(traditional)</option>
+                      <option value="cs">Czech</option>
+                      <option value="da">Danish</option>
+                      <option value="nl">Dutch</option>
+                      <option value="eo">Esperanto</option>
+                      <option value="et">Estonian</option>
+                      <option value="fi">Finnish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <option value="el">Greek</option>
+                      <option value="he">Hebrew</option>
+                      <option value="hi">Hindi</option>
+                      <option value="hu">Hungarian</option>
+                      <option value="id">Indonesian</option>
+                      <option value="ga">Irish</option>
+                      <option value="it">Italian</option>
+                      <option value="ja">Japanese</option>
+                      <option value="ko">Korean</option>
+                      <option value="lv">Latvian</option>
+                      <option value="lt">Lithuanian</option>
+                      <option value="ms">Malay</option>
+                      <option value="no">Norwegian</option>
+                      <option value="fa">Persian</option>
+                      <option value="pl">Polish</option>
+                      <option value="pt">Portuguese</option>
+                      <option value="ro">Romanian</option>
+                      <option value="ru">Russian</option>
+                      <option value="sr">Serbian</option>
+                      <option value="sk">Slovak</option>
+                      <option value="sl">Slovenian</option>
+                      <option value="es">Spanish</option>
+                      <option value="sv">Swedish</option>
+                      <option value="tl">Tagalog (Filipino)</option>
+                      <option value="th">Thai</option>
+                      <option value="tr">Turkish</option>
+                      <option value="uk">Ukrainian</option>
+                      <option value="ur">Urdu</option>
+                      <option value="vi">Vietnamese</option>
+                      </select>
+                  </li>
+                  <li class="exchange-file"><i class="fas fa-exchange-alt"></i></li>
+                  <li class="row to">
+                    <select id="Filetranslate-select">
+                      <option value="en">English</option>
+                      <option value="sq">Albanian</option>
+                      <option value="ar">Arabic</option>
+                      <option value="az">Azerbaijani</option>
+                      <option value="bn">Bengali</option>
+                      <option value="bg">Bulgarian</option>
+                      <option value="ca">Catalan</option>
+                      <option value="zh">Chinese</option>
+                      <option value="zt">Chinese(traditional)</option>
+                      <option value="cs">Czech</option>
+                      <option value="da">Danish</option>
+                      <option value="nl">Dutch</option>
+                      <option value="eo">Esperanto</option>
+                      <option value="et">Estonian</option>
+                      <option value="fi">Finnish</option>
+                      <option value="fr" selected>French</option>
+                      <option value="de">German</option>
+                      <option value="el">Greek</option>
+                      <option value="he">Hebrew</option>
+                      <option value="hi">Hindi</option>
+                      <option value="hu">Hungarian</option>
+                      <option value="id">Indonesian</option>
+                      <option value="ga">Irish</option>
+                      <option value="it">Italian</option>
+                      <option value="ja">Japanese</option>
+                      <option value="ko">Korean</option>
+                      <option value="lv">Latvian</option>
+                      <option value="lt">Lithuanian</option>
+                      <option value="ms">Malay</option>
+                      <option value="no">Norwegian</option>
+                      <option value="fa">Persian</option>
+                      <option value="pl">Polish</option>
+                      <option value="pt">Portuguese</option>
+                      <option value="ro">Romanian</option>
+                      <option value="ru">Russian</option>
+                      <option value="sr">Serbian</option>
+                      <option value="sk">Slovak</option>
+                      <option value="sl">Slovenian</option>
+                      <option value="es">Spanish</option>
+                      <option value="sv">Swedish</option>
+                      <option value="tl">Tagalog (Filipino)</option>
+                      <option value="th">Thai</option>
+                      <option value="tr">Turkish</option>
+                      <option value="uk">Ukrainian</option>
+                      <option value="ur">Urdu</option>
+                      <option value="vi">Vietnamese</option>
+                      <option value="au">Auto</option>
+                      </select>
+
+                  </li>
+                </ul>
+             </div>
+          </div>
+
+
+
+    </div>
+
+       <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

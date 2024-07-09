@@ -1,0 +1,526 @@
+*{
+    border: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-header{
+    margin-top: 12px;
+    margin-left: 12px;
+    background-image: url('/static/images/header-bg.png');
+    width: 198vh;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    background-attachment: fixed;
+
+}
+
+#header{
+  background-color: black;
+    border-radius: 34px;
+    border-top-left-radius: 0;
+}
+
+.logo{
+    font-size: 2rem;
+    color: #0b0909;
+    position: relative;
+    top:10px
+}
+span{
+    font-family: Impact, Charcoal, sans-serif;
+}
+.container{
+    margin-top: 42px;
+}
+.trans{
+    padding: 20px;
+    margin-left: 43px;
+    font-size: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.trans:hover{
+    background-color: rgb(201, 240, 240);
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    margin: 20px 0;
+    width: 90%;
+    position: relative;
+    left: 54px;
+}
+.texting-area{
+    border: 2px solid black;
+    width: 90%;
+    position: relative;
+    left: 55px;
+}
+.text-input{
+    display: flex;
+}
+.text-input textarea{
+    height: 250px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  .text-input textarea::placeholder{
+    color: #130202;
+  }
+  .text-input .translate-text{
+    border-left: 2px solid black;
+    border-radius: 0;
+  }
+  .texting-area .text-input{
+    border-bottom: 2px solid #07070b;
+  }
+  .transbtn{
+    position: relative;
+    left: 59px;
+    width: 90%;
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 29px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    border-radius: 8px;
+    background-image: linear-gradient(to top, #efbcc9 0%, #ffb199 100%);
+    background-color: #ff9177;
+    font-size: 1.4rem;
+    color: #07070b;
+    cursor: pointer;
+  }
+  .file{
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+
+  .trans-high{
+    background-color: rgb(201, 240, 240);
+  }
+
+  .controls, li, .icons, .icons i{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .controls{
+    list-style: none;
+    padding: 12px 15px;
+  }
+  .controls .row .icons{
+    width: 38%;
+  }
+  .controls .row .icons i{
+    width: 50px;
+    color: #0c0505;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    justify-content: center;
+  }
+
+  .controls .row.from .icons{
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+  }
+  .controls .row.to .icons{
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+  }
+  .controls .row select{
+    color: #333;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    padding-left: 5px;
+  }
+
+  .text-input textarea::-webkit-scrollbar{
+    width: 4px;
+  }
+  .controls .row select::-webkit-scrollbar{
+    width: 8px;
+  }
+  .text-input textarea::-webkit-scrollbar-track,
+  .controls .row select::-webkit-scrollbar-track{
+    background: #fff;
+  }
+  .text-input textarea::-webkit-scrollbar-thumb{
+    background: #ddd;
+    border-radius: 8px;
+  }
+  .controls .row select::-webkit-scrollbar-thumb{
+    background: #999;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+  }
+  .controls .exchange{
+    color: #0f0101;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+  }
+  .controls i:active{
+    transform: scale(0.9);
+  }
+
+  .file-area{
+    border: none;
+    width: 70%;
+    position: relative;
+    left: 95px;
+    height: 50vh;
+    text-align: center;
+  }
+  .file-support{
+    margin-top: 34px;
+  }
+  .choose_file{
+    position: relative;
+    top:69px
+  }
+  .submit-file{
+    padding: 14px;
+    cursor: pointer;
+  }
+  .Translate-file{
+    width: 90px;
+    height: 40px;
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    top:2px;
+    right: 12px;
+  }
+
+  .File-area{
+    border: 2px solid rgb(2, 2, 2);
+    width: 85%;
+    position: relative;
+    left: 55px;
+    margin-bottom: 90px;
+    height: 46vh;
+}
+.file-list{
+  position: relative;
+  bottom: 50px;
+}
+#downloadLink {
+  display: block;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #c3d7c3;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 4px;
+  position: relative;
+  bottom: 10px;
+  width: 30%;
+  left: 209px;
+  cursor: pointer;
+}
+.container_box{
+  border: 1px solid black;
+  position: relative;
+
+}
+.audioC{
+  display:block;
+  position: relative;
+  margin-top: 13px;
+  left: 447px;
+}
+#transcribeButton{
+  padding: 12px;
+  border:0;
+  cursor: pointer;
+  border-radius: 12px;
+  background-image: linear-gradient(to top, #efbcc9 0%, #ffb199 100%);
+  background-color: #ff9177;
+}
+ /* Responsive */
+ @media screen and (max-width:990px) {
+  #downloadLink{
+    position: relative;
+    left:-74px;
+    bottom: 60px;
+    width: 50%;
+    height: 30px;
+  }
+ }
+  @media screen and (max-width: 760px){
+    .main-header{
+      margin-top: 12px;
+      margin-left: 12px;
+      background-image: url(/Asset/header-bg.png);
+      width: 123vh;
+      height: 10vh;
+      display: flex;
+      justify-content: space-around;
+      background-attachment: fixed;
+  }
+      .trans{
+            padding: 10px;
+            margin-left: 43px;
+            font-size: 24px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .text-input textarea{
+          height: 250px;
+          width: 70%;
+          border: none;
+          outline: none;
+          resize: none;
+          background: none;
+          font-size: 18px;
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
+        .texting-area{
+          border: 2px solid black;
+          width: 86%;
+          position: relative;
+          left: 55px;
+      }
+      .controls .row .icons i{
+        width: 32px;
+        color: #0c0505;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        justify-content: center;
+      }
+      #Text-select{
+        position: relative;
+        right: 26px;
+      }
+      #translate-select{
+        position: relative;
+        left: 20px;
+      }
+      #downloadLink{
+        position: relative;
+        left:-74px;
+        bottom: 60px;
+        width: 50%;
+        height: 30px;
+      }
+  }
+  @media screen and (max-width: 620px){
+    .main-header{
+      margin-top: 12px;
+      margin-left: 12px;
+      background-image: url(/Asset/header-bg.png);
+      width: 113vh;
+      height: 10vh;
+      display: flex;
+      justify-content: space-around;
+      background-attachment: fixed;
+  }
+      .trans{
+            padding: 10px;
+            margin-left: 43px;
+            font-size: 24px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .text-input textarea{
+          height: 250px;
+          width: 70%;
+          border: none;
+          outline: none;
+          resize: none;
+          background: none;
+          font-size: 18px;
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
+        .texting-area{
+          border: 2px solid black;
+          width: 86%;
+          position: relative;
+          left: 55px;
+      }
+      .controls .row .icons i{
+        width: 32px;
+        color: #0c0505;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        justify-content: center;
+      }
+      #Text-select{
+        position: relative;
+        right: 26px;
+      }
+      #translate-select{
+        position: relative;
+        left: 20px;
+      }
+      #downloadLink{
+        position: relative;
+        left:-74px;
+        bottom: 60px;
+        width: 50%;
+        height: 30px;
+      }
+  }
+
+  @media screen and (max-width:560px) {
+    .text-input textarea{
+      height: 250px;
+      width: 290%;
+      border: none;
+      outline: none;
+      resize: none;
+      background: none;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    .controls .row .icons i{
+        width: 32px;
+        color: #030000;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        justify-content: center;
+      }
+      #translate-select{
+        position: relative;
+        right: 95px;
+        width: 44%;
+      }
+      #Text-select{
+        position: relative;
+        right: 20px;
+        width: 50%;
+      }
+      #downloadLink{
+        position: relative;
+        left:-74px;
+        bottom: 60px;
+        width: 50%;
+        height: 30px;
+      }
+  }
+  @media screen and (max-width:450px) {
+    #file-translate{
+      position: relative;
+      top: 10px;
+    }
+    #text-translate{
+      position: relative;
+      bottom: 25px;
+    }
+    .main-header{
+      margin-top: 12px;
+      margin-left: 12px;
+      background-image: url(/Asset/header-bg.png);
+      width: 74vh;
+      height: 10vh;
+      display: flex;
+      justify-content: space-around;
+      background-attachment: fixed;
+  }
+  .controls .row .icons i{
+    width: 32px;
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    justify-content: center;
+  }
+  .transbtn{
+    width: 70%;
+    position: relative;
+    right: 199px;
+  }
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    margin: 20px 0;
+    width: 87%;
+    position: relative;
+    left: 54px;
+}
+#downloadLink{
+  position: relative;
+  left:-74px;
+  bottom: 60px;
+  width: 50%;
+  height: 30px;
+}
+  }
+  @media screen and (max-width:360px) {
+    #File-select{
+      width: 90px;
+    }
+    #Filetranslate-select{
+      width: 90px;
+    }
+    .Translate-file{
+      position: relative;
+      left: 6px;
+      top: -27px;
+    }
+    .File-area{
+      border: 2px solid rgb(2, 2, 2);
+      width: 85%;
+      position: relative;
+      left: 37px;
+      margin-bottom: 90px;
+      height: 46vh;
+  }
+  hr{
+    width: 80%;
+  }
+  .choose_file{
+    position: relative;
+    top:59px
+  }
+  .choose{
+    position: relative;
+    bottom: 34px;
+  }
+  #file{
+    position: relative;
+    bottom: 23px;
+  }
+  .text-input textarea{
+    height: 250px;
+    width: 290%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  #downloadLink{
+    position: relative;
+    left:-74px;
+    bottom: 90px;
+    width: 50%;
+    height: 30px;
+  }
+  }
