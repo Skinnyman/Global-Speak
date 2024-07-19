@@ -1,7 +1,8 @@
 **Language Translator**
 
-          REQUIREMENT 
+REQUIREMENT 
  **Install and Run**
+
  
  Install flask:
 
