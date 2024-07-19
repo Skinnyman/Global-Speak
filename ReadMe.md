@@ -32,8 +32,8 @@ Run this command on windows powershell:
 Note **Windows Powershell must be run as administrator**
 
 In windows Powershell run this command:
-       **choco install ffmeg**
+       choco install ffmeg
 
 Install flask:
-          **pip install flask**
+          pip install flask
                
