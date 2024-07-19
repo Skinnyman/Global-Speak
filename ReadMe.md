@@ -2,6 +2,10 @@
 
           REQUIREMENT 
  **Install and Run**
+ 
+ Install flask:
+
+          pip install flask
 
 You need to run the api server locally
 
@@ -35,7 +39,5 @@ In windows Powershell run this command:
 
        choco install ffmeg
 
-Install flask:
 
-          pip install flask
                
