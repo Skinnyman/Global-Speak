@@ -234,6 +234,3 @@ if (!('webkitSpeechRecognition' in window)) {
     };
 }
 
-transbribe.addEventListener('click', ()=>{
-
-})
